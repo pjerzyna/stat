@@ -4,6 +4,7 @@ from scipy.stats import kurtosis
 from typing import Union 
 from prettytable import PrettyTable
 
+#dodac bledy i wyjatki
 
 def stats(vector: Union[np.ndarray, list]):
     
