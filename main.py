@@ -2,10 +2,11 @@ import numpy as np
 from scipy.stats import skew 
 from scipy.stats import kurtosis
 from typing import Union 
+from prettytable import PrettyTable
 
-#pozostało sprawdzić błędy, dodać podowiedzi typów itp
 
 def stats(vector: Union[np.ndarray, list]):
+    
     mean = np.mean(vector) #średnia
     s = np. std(vector) #odchylenie standardowe
     v = s / mean #współczynnik zmienności (można razy 100% dać, wtedy będzie w wart. procentowych)
@@ -21,9 +22,32 @@ def stats(vector: Union[np.ndarray, list]):
     rkk = k3 - k1 #rozstę międzykwartylowy - różnica pomiędzy trzecim (k3) a pierwszym (k1) kwartylem
     skewness = skew(vector) #skośność - miara asymetrii rozkładu  [taki wzór był na wikipedii: 3 * (mean - mediana) / s)]
     kurt = kurtosis(vector) #kurtoza - miara kształtu rozkładu wartości cechy, jak bardzo spłaszczony ogony i podobny do normalnego
-    return skewness
+    # w zależności od kaprysu, można coś jeszcze dodać
 
+    info = {
+        'srednia' : mean,
+        'odchylenie standardowe' : s,
+        'wspolczynnik zmiennosci' : v,
+        'minimum' : x_min,
+        '10 precentyl' : p10,
+        '1 kwartyl' : k1,
+        'mediana' : mediana,
+        '3 kwartyl' : k3,
+        '90 precentyl' : p90,
+        'maksimnum' : x_max,
+        'rozstep danych' : r,
+        'rozstep miedzykwartylowy' : rkk,
+        'skosnosc' : skewness,
+        'kurtoza' : kurt
+    }
 
-v1 = [1, 2, 3, 4, 5, 6]
-m = stats(v1) 
+    table = PrettyTable(["Cecha", "Wartosc"])
+    for key, value in info.items():
+        table.add_row([key, value])
+    
+    return table
+
+#pogoda Krakow listopad
+v = [15, 13, 15, 13, 11, 11, 12, 11, 11, 9, 10, 10 ,11, 10, 12, 10, 8, 8, 7, 6, 8, 6, 6, 7, 1, 0, 0, -1, -2, -1]
+m = stats(v)
 print(m)
