@@ -24,7 +24,6 @@ def stats(vector: Union[np.ndarray, list]):
     skewness = skew(vector) #skośność - miara asymetrii rozkładu  [taki wzór był na wikipedii: 3 * (mean - mediana) / s)]
     kurt = kurtosis(vector) #kurtoza - miara kształtu rozkładu wartości cechy, jak bardzo spłaszczony ogony i podobny do normalnego
     # w zależności od kaprysu, można coś jeszcze dodać
-    entropy = 2 #entropia - miara nieuporządkowania
 
     info = {
         'srednia' : mean,
