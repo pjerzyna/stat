@@ -1,10 +1,4 @@
-Cześć!
+Hello!
 
-Jest to proste przedstawienie wybiórczych statystyk z danego wektora danych w postaci tabelki z wykorzystaniem kilku bibliotek.
-Biblioteki da się zainstalować za pomocą pipa:
-
-$ pip install numpy
-$ pip install scipy 
-$ pip install prettytable
-
-lub anakondy:
+That's my first project. I hope it will be as 'proffesional' as possible!
+It is a simple presentation of selective statistics from a given data vector in the form of a table using several libraries.
