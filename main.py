@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 
 #exeptions and errors
 
-def stats(vector: Union[np.ndarray, list]):
+def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
     
     mean = np.mean(vector) # the average of the set
     s = np. std(vector) # standard deviation - a measure of the amount of variation or dispersion of a set of values
