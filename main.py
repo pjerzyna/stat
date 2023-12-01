@@ -49,3 +49,7 @@ def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
         table.add_row([key, value])
     
     return table
+
+v = [1, 2, 3, 4, 5, 6]
+a = stats(v)
+print(a)
