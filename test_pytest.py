@@ -1,13 +1,16 @@
 from main import stats #importing a function to test
 import pytest
+from prettytable import PrettyTable
+
+
+# I need to convert this test the PrettyTable result into a dictionary for easier comparison
 
 
 # works well when it has one input and one output
-@pytest.mark.parametrize(
-        
+@pytest.mark.parametrize( 
         ('input_vec', 'expected_output'),
         (
-            ([1, 2, 3, 4, 5, 6], (
+            ([1, 2, 3, 4, 5, 6], PrettyTable([
     """+--------------------------+---------------------+
     |   Statistical feature    |        Value        |
     +--------------------------+---------------------+
@@ -26,11 +29,15 @@ import pytest
     |         skewness         |         0.0         |
     |         kurtosis         | -1.2685714285714282 |
     +--------------------------+---------------------+"""
-            )),
+           ])),
         )
 )
 
 
 
 def test_vector(input_vec, expected_output):
-    assert stats.vector(input_vec) == expected_output # function.test_name
+    result = stats(input_vec) 
+    assert result == expected_output # function.test_name
+
+a = stats([1, 2, 3, 4, 5, 6])
+print(a)
