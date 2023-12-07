@@ -25,7 +25,6 @@ def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
     skewness = skew(vector) # skewness - a measure of the asymetry of a distribution
     kurt = kurtosis(vector) # kurtosis - a measure used to describe the distribution of data and assess the shape of tails relative to a normal distribution.
     
-    #(optional) - add new attributes 
 
     info = {
         'mean' : mean,
@@ -50,6 +49,5 @@ def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
     
     return table
 
-#v = [1, 2, 3, 4, 5, 6]
-#a = stats(v)
-#print(a)
+a = stats([1, 2, 3 ,4 ,5 ,6])
+print(a)
