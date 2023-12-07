@@ -16,7 +16,7 @@ from prettytable import PrettyTable
     +--------------------------+---------------------+
     |           mean           |         3.5         |
     |    standard deviation    |  1.707825127659933  |
-    | coefficient of variation |       48.80 %       |
+    | coefficient of variation |       48.80 %       | #change this prettytable into a dictionary 
     |         minimum          |          1          |
     |       10 precentil       |         1.5         |
     |        1 quartile        |         2.25        |
