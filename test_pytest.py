@@ -107,64 +107,55 @@ def test_data_2():
     result = str(stats(vector)).strip()
     assert result == output
 
-# # #
-#
-# # #
-#
-# # #
-
-#doesnt work !!!!
 def test_reversed_data_2():
     vector = np.array([-2, -18, 0, 2, 32, -23, 10, 88, 36, 45, 12, 100, 98, 99])
     output = (
-        "+--------------------------+--------------------+\n"
-        "|   Statistical feature    |       Value        |\n"
-        "+--------------------------+--------------------+\n"
-        "|           mean           | 34.214285714285715 |\n"
-        "|    standard deviation    |  43.2685609576623  |\n"
-        "| coefficient of variation |      126.46 %      |\n"
-        "|         minimum          |        -23         |\n"
-        "|       10 precentil       |       -13.2        |\n"
-        "|        1 quartile        |        0.5         |\n"
-        "|         mediana          |        22.0        |\n"
-        "|        3 quartile        |       77.25        |\n"
-        "|      90 precentile       |        98.7        |\n"
-        "|         maximum          |        100         |\n"
-        "|        data range        |        123         |\n"
-        "|   interquartile range    |       76.75        |\n"
-        "|         skewness         | 0.4384235699403917 |\n"
-        "|         kurtosis         | -1.284395016367453 |\n"
-        "+--------------------------+--------------------+"
+        "+--------------------------+---------------------+\n"
+        "|   Statistical feature    |        Value        |\n"
+        "+--------------------------+---------------------+\n"
+        "|           mean           |  34.214285714285715 |\n"
+        "|    standard deviation    |   43.2685609576623  |\n"
+        "| coefficient of variation |       126.46 %      |\n"
+        "|         minimum          |         -23         |\n"
+        "|       10 precentil       |        -13.2        |\n"
+        "|        1 quartile        |         0.5         |\n"
+        "|         mediana          |         22.0        |\n"
+        "|        3 quartile        |        77.25        |\n"
+        "|      90 precentile       |         98.7        |\n"
+        "|         maximum          |         100         |\n"
+        "|        data range        |         123         |\n"
+        "|   interquartile range    |        76.75        |\n"
+        "|         skewness         |  0.4384235699403915 |\n"
+        "|         kurtosis         | -1.2843950163674527 |\n"
+        "+--------------------------+---------------------+"
     )
 
     
     result = str(stats(vector))
     assert result == output
 
-
-# nie dziala bo jest wszysto o jedno za barzdo przesuniete w lewo/prawo
 def test_mixed_data_2():
     vector = np.array([98, 45, 10, -23, 36, 32, 99, 2, 0, 100, -18, 88, -2, 12])
     output = (
-    "+--------------------------+--------------------+\n"
-    "|   Statistical feature    |       Value        |\n"
-    "+--------------------------+--------------------+\n"
-    "|           mean           | 34.214285714285715 |\n"
-    "|    standard deviation    |  43.2685609576623  |\n"
-    "| coefficient of variation |      126.46 %      |\n"
-    "|         minimum          |        -23         |\n"
-    "|       10 precentil       |       -13.2        |\n"
-    "|        1 quartile        |        0.5         |\n"
-    "|         mediana          |        22.0        |\n"
-    "|        3 quartile        |       77.25        |\n"
-    "|      90 precentile       |        98.7        |\n"
-    "|         maximum          |        100         |\n"
-    "|        data range        |        123         |\n"
-    "|   interquartile range    |       76.75        |\n"
-    "|         skewness         | 0.4384235699403917 |\n"
-    "|         kurtosis         | -1.284395016367453 |\n"
-    "+--------------------------+--------------------+"
-)
+    '+--------------------------+---------------------+\n'
+    '|   Statistical feature    |        Value        |\n'
+    '+--------------------------+---------------------+\n'
+    '|           mean           |  34.214285714285715 |\n'
+    '|    standard deviation    |   43.2685609576623  |\n'
+    '| coefficient of variation |       126.46 %      |\n'
+    '|         minimum          |         -23         |\n'
+    '|       10 precentil       |        -13.2        |\n'
+    '|        1 quartile        |         0.5         |\n'
+    '|         mediana          |         22.0        |\n'
+    '|        3 quartile        |        77.25        |\n'
+    '|      90 precentile       |         98.7        |\n'
+    '|         maximum          |         100         |\n'
+    '|        data range        |         123         |\n'
+    '|   interquartile range    |        76.75        |\n'
+    '|         skewness         | 0.43842356994039167 |\n'
+    '|         kurtosis         | -1.2843950163674522 |\n'
+    '+--------------------------+---------------------+'
+    )
     
-    result = str(stats(vector)).strip()
+    result = str(stats(vector))
     assert result == output

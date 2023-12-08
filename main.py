@@ -49,6 +49,6 @@ def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
     
     return table
 
-vector = np.array([99, 98, 100, 12, 45, 36, 88, 10, -23, 32, 2, 0, -18, -2])
+vector = np.array([98, 45, 10, -23, 36, 32, 99, 2, 0, 100, -18, 88, -2, 12])
 s1 = stats(vector)
 print(s1)
