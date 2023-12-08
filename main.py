@@ -4,9 +4,18 @@ from scipy.stats import kurtosis
 from typing import Union 
 from prettytable import PrettyTable
 
-#exeptions and errors
 
 def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
+
+    if len(vector) == 0:
+        error = "Vector cannot be empty!"
+        return error
+    
+    if isinstance(vector, np.ndarray):
+        if len(vector.shape) != 1:
+            err = "Vector must be 1D!"
+            return err
+    
     
     mean = np.mean(vector) # the average of the set
     s = np. std(vector) # standard deviation - a measure of the amount of variation or dispersion of a set of values
@@ -48,7 +57,3 @@ def stats(vector: Union[np.ndarray, list]) -> PrettyTable:
         table.add_row([key, value])
     
     return table
-
-vector = np.array([98, 45, 10, -23, 36, 32, 99, 2, 0, 100, -18, 88, -2, 12])
-s1 = stats(vector)
-print(s1)

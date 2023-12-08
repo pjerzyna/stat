@@ -81,6 +81,13 @@ def test_mixed_data():
     result = str(stats(vector))
     assert result == output
 
+def test_empty():
+    vector = []
+    output = "Vector cannot be empty!"
+
+    result = stats(vector)
+    assert result == output
+
 def test_data_2():
     vector = np.array([99, 98, 100, 12, 45, 36, 88, 10, -23, 32, 2, 0, -18, -2])
     output = (
@@ -158,4 +165,18 @@ def test_mixed_data_2():
     )
     
     result = str(stats(vector))
+    assert result == output
+
+def test_empty_2():
+    vector = np.array([])
+    output = "Vector cannot be empty!"
+
+    result = stats(vector)
+    assert result == output
+
+def test_dimensions():
+    vector = np.array([[1, 2, 3], [3, 2, 1], [4, 7, 0]])
+    output = "Vector must be 1D!"
+
+    result = stats(vector)
     assert result == output
