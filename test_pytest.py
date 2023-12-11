@@ -1,7 +1,6 @@
 from main import stats #importing a function to the test
 import pytest
 import numpy as np
-from prettytable import PrettyTable
 
 def test_data():
     vector = [1, 2, 3, 4, 5, 6]
