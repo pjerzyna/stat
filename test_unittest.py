@@ -7,8 +7,10 @@ class StatTest(unittest.TestCase):
     
     def setUp(self):
         #arrange
-        self.v = [15, 13, 15, 13, 11, 11, 12, 11, 11, 9, 10, 10 ,11, 10, 12, 10, 8, 8, 7, 6, 8, 6, 6, 7, 6, 0, 0, -1, -2, -1]
-        self.data = (
+        self.v1 = [15, 13, 15, 13, 11, 11, 12, 11, 11, 9, 10, 10 ,11, 10, 12, 10, 8, 8, 7, 6, 8, 6, 6, 7, 6, 0, 0, -1, -2, -1]
+        self.v2 = [15, 13, 15, 13, 11, 11, 12, 11, 11, 9, 10, 10 ,11, 10, 12, 10, 8, 8, 7, 6, 8, 6, 6, 7, 6, 0, 0, -1, -2, -1] #reversed
+        self.v3 = [15, 13, 15, 13, 11, 11, 12, 11, 11, 9, 10, 10 ,11, 10, 12, 10, 8, 8, 7, 6, 8, 6, 6, 7, 6, 0, 0, -1, -2, -1] #mixed
+        self.data123 = (
     "+--------------------------+----------------------+\n"
     "|   Statistical feature    |        Value         |\n"
     "+--------------------------+----------------------+\n"
@@ -31,11 +33,22 @@ class StatTest(unittest.TestCase):
 
     def test_data(self):
         #act
-        result = str(stats(self.v))
+        result = str(stats(self.v1))
         #assert
-        self.assertEqual(result, self.data)
+        self.assertEqual(result, self.data123)
 
+    def test_reversed_data(self):
+        #act
+        result = str(stats(self.v2))
+        #assert
+        self.assertEqual(result, self.data123)
+
+    def test_mixed_data(self):
+        #act
+        result = str(stats(self.v3))
+        #assert
+        self.assertEqual(result, self.data123)
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main() #what does this mean
